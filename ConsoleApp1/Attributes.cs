@@ -26,7 +26,7 @@ namespace ConsoleApp1
             return "old";
         }
 
-        // Custom Attribute Valuing
+        // Custom Attribute Setting Value
         [CutomAttribute(56, "Zara Ali", "19/10/2012")]
         public void CustomMethod()
         {

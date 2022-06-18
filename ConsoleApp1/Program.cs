@@ -21,6 +21,16 @@ namespace ConsoleApp1
             CutomAttribute attr = (CutomAttribute)method.GetCustomAttributes(typeof(CutomAttribute), true)[0];
             Console.WriteLine("Developer is : " + attr.Developer);
 
+            // Reflection
+            System.Reflection.MemberInfo info = typeof(Attributes);
+            Console.WriteLine("Name is : " + info.Name);
+
+            // Indexer
+            var indexer = new Indexers();
+            indexer[1] = 10;
+            indexer[2] = 20;
+            Console.WriteLine(indexer[2]);
+
         }
     }
 }
