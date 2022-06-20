@@ -39,5 +39,17 @@ namespace ConsoleApp1
             t2.Start();
             t3.Start();
         }
+
+        public static void Run()
+        {
+            // Multitreading
+            // multithreading is about multiple threads running in parallel
+            // We can clearly see the execution of multithreaded methods on different threads as expected.
+            // But also, they are keeping the same threads for the continuation compared to the async methods.
+            // multithreading programming is all about concurrent execution of different functions
+            // Multithreading is about workers
+            Multithreadings multithreading = new Multithreadings();
+            multithreading.ExecuteMultithreading();
+        }
     }
 }

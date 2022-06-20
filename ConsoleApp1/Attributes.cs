@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,25 @@ namespace ConsoleApp1
         [CutomAttribute(56, "Zara Ali", "19/10/2012")]
         public void CustomMethod()
         {
+
+        }
+
+        public static void Run()
+        {
+            var a = new Attributes();
+
+            // Conditional
+            a.DebugMethod();
+
+            // Obsolete            
+            // Console.WriteLine(a.OldMethod());
+
+            Console.WriteLine("----------------------");
+
+            // Custom Attribute
+            MethodBase method = typeof(Attributes).GetMethod("CustomMethod");
+            CutomAttribute attr = (CutomAttribute)method.GetCustomAttributes(typeof(CutomAttribute), true)[0];
+            Console.WriteLine("Developer is : " + attr.Developer);
 
         }
 

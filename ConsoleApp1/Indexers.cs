@@ -21,5 +21,14 @@ namespace ConsoleApp1
             set { intArray[i] = value; }
         }
 
+        public static void Run()
+        {
+            // Indexer
+            var indexer = new Indexers();
+            indexer[1] = 10;
+            indexer[2] = 20;
+            Console.WriteLine(indexer[2]);
+        }
+
     }
 }

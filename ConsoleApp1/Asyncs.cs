@@ -39,5 +39,14 @@ namespace ConsoleApp1
             await Task.WhenAll(firstAsync, secondAsync, thirdAsync);
         }
 
+        public static async Task Run()
+        {
+            // Async 
+            // Asynchronous programming is about the asynchronous sequence of Tasks
+            // Async programming is about non-blocking execution between functions
+            // Asynchronous is about tasks.
+            await Asyncs.ExecuteAsyncFunctions();
+        }
+
     }
 }
