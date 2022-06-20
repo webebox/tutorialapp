@@ -14,8 +14,10 @@ namespace TestProject1
 
             // act
             double actual = a + b;
+
             // assert
             Assert.Equal(expected, actual);
+            
         }
     }
 }

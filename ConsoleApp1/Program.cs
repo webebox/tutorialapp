@@ -12,7 +12,9 @@ namespace ConsoleApp1
             // uncomment and watch the intellisense in below code
             // DocumentattionComments.Add
 
-            RuntimeDebug.Run();
+            //RuntimeDebug.Run();
+
+            SmallTips.Run();
 
         }
     }

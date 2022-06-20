@@ -11,7 +11,34 @@ namespace ConsoleApp1
 {
     public class SmallTips
     {
-        public static void Run(int x)
+        // Initializer
+        SmallTips()
+        {
+            //Initialize Code
+        }
+
+        // Finalizer
+        ~SmallTips()   // Tip!
+        {
+            //Dispose Code
+        }
+
+        // flags
+        [System.Flags]
+        public enum Names : int
+        {
+            Ali = 1,
+            Hasan = 2,
+            Reza = 3
+        }
+
+        // init  Tip!
+        public class ImmutablePerson
+        {
+            public string? FirstName { get; init; }
+        }
+
+        public static void Run()
         {
             int number1 = 1_000_000;
             int number2 = 1_00_00;
@@ -41,7 +68,51 @@ namespace ConsoleApp1
             // type of
             Type type = typeof(int);
 
+            // flags
+            // Tip!
+            // we can define an enum that has different value
+            var ali = Names.Ali;
+            Console.WriteLine(ali);  // ali
+            Console.WriteLine((int)ali); // 1
+
+            // tuples
+            (string, int) fruit = new("apple", 1);
+
+            (string Name, int Weight) animal = new();
+            animal.Name = "Lion";
+            animal.Weight = 200;
+
+            // Method Parameters
+            int x = 1;
+            int y = 2;
+            int z = 3;
+
+            x = PassingParameters(x, ref y, out z);
+            Console.WriteLine($"x:{x}, y:{y}, z:{z}");
+
+            // simplified out parameters Tip!
+            int a = PassingParameters(1, ref y, out int w);  // inline
+            Console.WriteLine($"w:{w}");
+
+            // Init
+            ImmutablePerson ip = new ImmutablePerson() { FirstName = "Ali" };
+            //ip.FirstName = "Ali"; // error
+
 
         }
+
+        // x :in-only
+        // y : in and out Tip!
+        // z : out only 
+        public static int PassingParameters(int x, ref int y, out int z)
+        {
+            x = x * 2;
+            y = y * 3;
+            //z = z * 4;  error
+            z = 77777777;
+
+            return x;
+        }
+
     }
 }
