@@ -1,5 +1,5 @@
 ﻿/*
-    The main Math class
+     The main Math class
     Contains all methods for performing basic math functions
 */
 /// <summary>
